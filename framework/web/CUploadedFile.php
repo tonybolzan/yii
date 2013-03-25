@@ -4,7 +4,7 @@
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @link http://www.yiiframework.com/
- * @copyright Copyright &copy; 2008-2011 Yii Software LLC
+ * @copyright 2008-2013 Yii Software LLC
  * @license http://www.yiiframework.com/license/
  */
 
@@ -183,6 +183,8 @@ class CUploadedFile extends CComponent
 
 	/**
 	 * Saves the uploaded file.
+	 * Note: this method uses php's move_uploaded_file() method. As such, if the target file ($file) 
+	 * already exists it is overwritten.
 	 * @param string $file the file path used to save the uploaded file
 	 * @param boolean $deleteTempFile whether to delete the temporary file after saving.
 	 * If true, you will not be able to save the uploaded file again in the current request.
